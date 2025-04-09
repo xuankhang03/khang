@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Đăng nhập</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Đăng nhập</h2>
+    <input type="email" id="email" placeholder="Email" required />
+    <input type="password" id="password" placeholder="Mật khẩu" required />
+    <div class="roles">
+      <label><input type="radio" name="role" value="admin" checked /> Admin</label>
+      <label><input type="radio" name="role" value="staff" /> Nhân viên</label>
+    </div>
+    <button onclick="handleLogin()">Đăng nhập</button>
+  </div>
+
+  <script>
+    function handleLogin() {
+      const role = document.querySelector('input[name="role"]:checked').value;
+      localStorage.setItem("userRole", role);
+
+      if (role === "admin") {
+        window.location.href = "admin.html";
+      } else {
+        window.location.href = "staff.html";
+      }
+    }
+  </script>
+
+</body>
+</html>

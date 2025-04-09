@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="admin-dashboard hidden" id="adminDashboard">
+    <div class="sidebar">
+      <h2>Admin</h2>
+      <a href="#">Đăng nhập</a>
+      <a href="#">Quản lý nhân sự</a>
+      <a href="#">Quản lý chức vụ</a>
+      <a href="#">Quản lý giờ làm</a>
+      <a href="#">Quản lý chấm công</a>
+      <a href="#">Quản lý lương</a>
+      <a href="#">Khen thưởng / Kỷ luật</a>
+      <a href="#">Thống kê</a>
+    </div>
+    <div class="main-admin-content">
+      <button onclick="logout()" class="logout-btn">Đăng xuất</button>
+      <h1>Chào mừng Admin!</h1>
+      <p>Chọn chức năng từ thanh bên trái để bắt đầu quản lý.</p>
+    </div>
+  </div>
+
+
+  <div class="staff-dashboard hidden" id="staffDashboard">
+    <button onclick="logout()" class="logout-btn">Đăng xuất</button>
+    <h2>Chào mừng Nhân viên!</h2>
+
+    <div class="section" id="chamcong">
+      <h3>Chấm công</h3>
+      <button onclick="checkIn()">Chấm công vào</button>
+      <button onclick="checkOut()">Chấm công ra</button>
+      <p id="logChamCong"></p>
+    </div>
+
+    <div class="section" id="thongtin">
+      <h3>Thông tin cá nhân</h3>
+      <input type="text" id="name" placeholder="Họ tên" />
+      <input type="email" id="emailUpdate" placeholder="Email" />
+      <input type="password" id="passwordUpdate" placeholder="Mật khẩu" />
+      <button onclick="updateInfo()">Cập nhật thông tin</button>
+      <p id="updateStatus"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
